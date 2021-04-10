@@ -1,0 +1,101 @@
+
+% Road-map
+\Huge
+\textsf{2. Road Map for the project}
+
+\vspace{0.5cm}
+\large
+I will not be available for two or three separate days in June (traveling). Apart from this, I have no prior commitments during this period.\\
+I have been participating in discussions and issues for sometime now, and have learned about how codebase is organized and works to some extent.\\
+I have worked on previous demos and had received a lot of review from johnny. So I understand the layout on how to approach demos and present them in reasonably well manner.\\
+I will be able to devote 40-45 hrs a week during the coding period. After GSOC,I will devote 15+ hrs a week since my interest fall in similar regions and Julia is worth exploring with the run time speed it provides for signal processing and machine learning.
+
+\vspace{0.2cm}
+\Large
+\underline{\textsf{Potential Mentors}}
+
+\vspace{0.3cm}
+\large
+Tim Holy, Zygmunt L. Szpak
+
+\vspace{0.2cm}
+\Large
+\underline{\textsf{Timeline}}
+
+\large
+\begin{itemize}[topsep=0]
+  \item \textbf{Buffer Period: April 13 - May 17} I would try to complete my remaining PRs or tasks (if any) and try to finish them before the community bonding period. I will try to go through on details of algorithms for image segmentation, GLCM and LocalBinaryPatterns.
+  \item \textbf{Community Period : May 17 - June 7} I plan to get to know more people in the Julia Community during this time period. I will need to brush up any theory that may be required during the coding phase. 
+%   \begin{displayquote}
+%   \begin{minted}{julia}
+%   while time.now() < deadline:
+%   code() and debug() and document()
+%   \end{minted}
+%   \end{displayquote}
+  \item \textbf{Coding Period Starts:}
+  \begin{itemize}
+      \item \textsf{Section 1: Demonstrations for Binarization and Morphology}
+      \begin{itemize}
+            \item Week 1 : Long Demonstration on Image Binarization and Histogram Thresholding
+            \item Week 2: Long demonstration on basic morphological methods and second demonstration combined for all other morphological methods 
+      \end{itemize}
+      \item \textsf{Section 2: Demonstrations on Image Features}
+      \begin{itemize}
+            \item Week 3: Transferring and reworking/updating tutorials of BRIEF,ORB,FRISK and FREAK,Object detection using HOG to be more concise and clear.
+             \item Week 4: Long Demonstration on usage of Local Binary Patterns as an object detector and demonstration on usage of GLCM and statistics related to it.
+      \end{itemize}
+
+      \item \textsf{First Evaluation: July 12 - 16} 
+      \begin{itemize}
+          \item Review on the work that has been done and updating the work flow if there's a need.
+      \end{itemize}
+      \\
+      \item \textsf{Section 3: Demonstrations on Image Segmentation}
+      \begin{itemize}
+          \item Week 6:  Demonstrations on seeded,unseeded region growing, and watershed segmentation
+          \item Week 7: Demonstrations on Felzanszwalb,Mean Shift, and fast scanning algorithms
+          \item Week 8: Demonstrations on Region Adjacency Graphs and Region Trees.
+      \end{itemize}
+      \item \textsf{Section 4: Demonstrations on Image Quality Indexes, Image Contrast Adjustments}
+      \begin{itemize}
+            \item Week 9: Demonstration on Image Quality Indexes which shows usage for 2-D and 3-D images
+            \item Week 10: Reworking Image Contrast related examples and transferring examples from ImageFiltering.jl and completing the WIP tasks from past weeks 
+      \end{itemize}
+
+
+      \item \textsf{Final Evaluation: August 16 - 23 }
+      \begin{itemize}
+          \item Review on the work that has been done ,submitting the final work product and write final report 
+      \end{itemize}
+  \end{itemize}
+  * Depending on how PR review progresses, some demos might take longer to be added/merged.
+\end{itemize}
+
+\vspace{0.2cm}
+\Large
+\underline{\textsf{Deliverable}}
+
+\vspace{0.2cm}
+\large
+\begin{itemize}[topsep=0.2mm]
+    \item 2 Demonstrations covering ImageMorphology.jl capabilities and 1 demonstrations covering ImageBinarization.jl
+    \item 2 new Demonstrations covering GLCM and LBPs and transferring/reworking ImageFeatures.jl tutorials
+    \item 6-8 new Demonstrations covering ImageSegmentatio.jl algorithms from majorly reworking current documentation of the package and a comparison demonstration
+    \item Reworked ImageContrastAdjustment.jl tutorials to improve coverage and 1 final tutorial on quality indexes from ImageQualityIndexes.jl
+\end{itemize}
+
+\vspace{0.2cm}
+\Large
+\underline{\textsf{Post GSoC}}
+
+\vspace{0.2cm}
+\large
+I have learned a lot and picked up a lot of important skills like testing and benchmarking by contributing to Julia and even after Google Summer of Code,I plan on continuing my contributions to this organization and working on new interesting projects and working on open issues.\\
+JuliaImages provides me with a good platform to hone my Julia programming skills and put my mathematical skills to good use.
+Since my interests lie in Signal Processing and Machine learning,
+several things come up in my mind:
+\begin{itemize}[noitemsep,topsep=0]
+    \item Work toward benchmarking JuliaImages algorithms with other Image Processing frameworks
+    \item Work toward my major project(in early phase) Libranya.jl which provides audio signal processing ability which involves a lot of image processing too. Julia doesn't provide any proper high level audio signal processing packages which other languages provide like librosa,essentia etc
+    \item Work toward image restoration and inpainting related algorithms since I have worked with these topics manually,it's always better to have algorithms.
+\end{itemize}

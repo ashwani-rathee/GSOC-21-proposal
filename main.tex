@@ -1,0 +1,82 @@
+\documentclass[10pt, twoside]{extarticle}
+
+% TeX gyre pagella fonts
+\usepackage{mathptmx}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{marvosym} % \Email
+\usepackage[affil-it]{authblk}
+\usetikzlibrary{trees}
+\usepackage{microtype}
+\usepackage{minted}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{xcolor}
+\usepackage{movie15}
+\usepackage[document]{ragged2e}
+
+\usepackage[paper=a4paper,margin=1.45in]{geometry}
+\usepackage[colorlinks=true]{hyperref}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+\hypersetup{
+  citecolor=black,
+  linkcolor=blue,
+  urlcolor=blue
+}
+\begin{document}
+% \thispagestyle{plain}
+\begin{center}
+    \vspace*{20mm} 
+    \Huge
+    Toward a User Friendly JuliaImages
+        
+    \vspace{0.4cm}
+    \large
+    Google Summer of Code 2021 Proposal
+        
+    \vspace{1.0cm}
+    \textbf{Ashwani Rathee}
+    
+    \vspace{0.2cm}
+    \href{ashwani.198023@gmail.com}{ab669522@gmail.com}
+    
+    \vspace{1.0cm}
+    April 2021
+       
+    \vspace{0.9cm}
+    \textbf{Abstract}
+
+    \vspace{0.2cm}
+    \begin{changemargin}{1.5cm}{1.5cm} 
+    \large
+    \begin{flushleft}
+     JuliaImages is a state of the art image processing
+ecosystem available to the community. Being written purely in
+Julia and having a huge number of algorithms - this ecosystem provides both almost-complete and easy interface environment for users.  Being said that,
+there is lack of organized setup for worked out demonstrations. There are several mini examples scattered around in
+the documentation of various packages in JuliaImages. This project
+aims to solve this very issue by organising the examples, reworking
+the current examples and adding a good number of new examples.
+    \end{flushleft}   
+    \end{changemargin}
+\end{center}
+
+% This project aims to improve the visibility of the various image processing packages provided by JuliaImages and move toward a more beginner friendly JuliaImages with increased Visualization and Interactivity tools.Main contributions consist of making demos for various Image processing functionalities available and improving on ImageDraw.jl and ImageView.jl.
+\Huge
+\textsf{1.  Description of the Project}\\
+
+\vspace{0.5cm}
+\large
+Image Processing is an important part of science. Image processing plays a very important role in science from helping Hubble telescope to explore the wide universe, to helping researchers segment HeLa cells. JuliaImages is one of the most feature rich and optimized ecosystems for solving image processing problems. Performance has always been a top priority for this ecosystem. It is highly optimized towards memory and speeds given the clean architecture and efficient code design. But still, there is not yet a well organized set of demonstrations to allow new and experienced users to explore capabilities of JuliaImages similarly with well-written clear and concise demonstrations. Here I propose ideas on how the 
+growth of this ecosystem can be further fueled by this project which focuses on the addition of new fully-worked out examples, reworking old examples and organising them under \textbf{Demonstrations}.
+
+
+
+\newpage
+\include{project}
+\include{roadmap}
+\include{aboutme}
+\include{references}
+\end{document}

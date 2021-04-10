@@ -1,0 +1,524 @@
+\newgeometry{margin=1.3in}
+\Large
+{}{1.1 Project : Improved Demonstrations Section}
+
+\vspace{0.5cm}
+\large
+JuliaImages ecosystem hosts numerous packages that provide equivalently\\ complete set of highly performant algorithmic features as provided by scikit-image, opencv, and MatLab image processing frameworks.  \\
+
+Images.jl is an umbrella package that exports a set of packages that are useful for common image processing tasks.One particular line that caught me attention :
+\begin{displayquote}
+"Elements of this package descend from "image.jl" that once lived in Julia's extras/ directory. That file had several authors, of which the primary were Jeff Bezanson, Stefan Kroboth, Tim Holy, Mike Nolta, and Stefan Karpinski."
+
+\end{displayquote}
+
+From image.jl to the widespread JuliaImages,that's a impressive story of persistence I think . I would like to be part of it in some way.
+
+\vspace{0.5cm}
+\Large
+\underline{Overview of the project}
+
+\vspace{0.3cm}
+\large
+The main motivation for this project is that lack of examples create a gap between the user of JuliaImages and the plethora of capabilities provided by JuliaImages. Even though the doc string of the algorithms provided by the developers are well written in most cases, but still docstring cannot replace the online demonstrations for easy and quick usage examples.
+
+\vspace{0.5cm}
+\Large
+\underline{Current Status}
+
+\vspace{0.3cm}
+\large
+Demonstrations section made with Democards.jl currently holds 12 examples and several others scattered in particular package documentations.
+
+In Demonstrations :
+\begin{itemize}[noitemsep,topsep=0.2cm]
+    \item 4 related to general handling of image data
+    \item 4 related to spatial transformations
+    \item 3 related to contours
+    \item 1 related to quality indexes
+\end{itemize}
+7 tutorials are currently present in ImageFeatures.jl docmentation.2  demonstrations are present in ImageFiltering.jl documentation. Demonstrations of algorithms are present in ImageSegmentation.jl all cluttered in one page.
+% \large
+% Packages can be divided into 3 types of packages as shown below:\\
+% \includegraphics[scale=0.6]{assets/Pathi.png}
+% Currently, Packages under JuliaImages can be roughly categorised into 3 types :
+% \begin{itemize}[noitemsep,topsep=0pt]
+%     \item High level packages
+%     \item Middle level packages
+%     \item Low level packages
+% \end{itemize}
+
+% \includegraphics[scale=0.4]{assets/Pathi.png}
+
+\vspace{0.5cm}
+\Large
+\underline{Project Details}
+
+\vspace{0.5cm}
+\large
+Project is divided in 4 sections:
+\begin{itemize}[noitemsep,topsep=0.2cm]
+    \item Section 1: Demonstrations on Image Binarization and Morphology
+    \item Section 2: Demonstrations on Image Features
+    \item Section 3: Demonstrations on Image Segmentation
+    \item Section 4: Demonstrations on Image Quality Indexes and Contrast Adjustment
+\end{itemize}
+According to the current project plan, most of the work for first 2 sections should be completed before the first evaluation and similarly section 3 and section 4 work would be done in week 6-10. Since the work done in any open source community is asynchronous,so some demonstrations/ideas might take longer to get merged/added depending on the reviews,feedback and updating the PRs with according to the feedback.\\
+With this current project plan,12-14 demonstrations will be added covering most of capabilities in ImageBinarization.jl, ImageMorphology.jl, ImageSegmentation.jl, ImageQualityIndexes.jl and ImageFeatures.jl packages. 
+
+% \vspace{0.3cm}
+% Providing the users with example.jl and pluto/jupyter notebook in .jl/.ipynb format for download directly on JuliaImages website  or providing them the tutorials in github repositories.
+
+Project will be discussed in more details with my mentor in community bonding period.
+
+\vspace{0.3cm}
+\textbf{Note: }There are several projects in JuliaImages like ImageTransformations.jl, ImageFiltering.jl and from people in Julia's image processing like ImageProjectiveGeometry.jl, Augmentor.jl  that haven't been touched in this project, so those might be potential demonstrations ideas for the community bonding period and of course in post GSOC period. There are several low level packages and utilities package like ImageDraw.jl,ImageView.jl, TiledIteration.jl that haven't been covered in this project plan due to time constraints and delivering limited quantity-high quality work.
+% \vspace{0.5cm}
+% High Level Packages in JuliaImages includes:
+% \begin{itemize}[noitemsep,topsep=0]
+%     \item ImageBinarization.jl provides various image binarization algorithms.
+%     \item ImageContrastAdjustment.jl supports image contrast enhancement and manipulation.
+%     \item ImageMorphology.jl provides several morphological operations for image processing.
+%     \item ImageFiltering.jl supports basic filtering operations.
+%     \item ImageFeatures.jl is a package for identifying and characterizing "keypoints" (salient features) in images.
+%     \item ImageQualityIndexes.jl provides several image quality assessment indexes, e.g., PSNR and SSIM.
+%     \item ImageTransformations.jl provides functions related to geometric transformations.
+%     \item ImageSegmentation.jl provides several image segmentation algorithms.
+%     \item ImageInpainting.jl provides image inpainting algorithms in Julia
+% \end{itemize}
+
+% \vspace{0.5cm}
+% \Large
+% \underline{Images.jl}
+
+% \vspace{0.5cm}
+% \large
+
+% Images.jl is an "umbrella package" that exports a set of packages that are useful for common image processing tasks. \\
+% The author has good storytelling to emphasize the importance of this package.
+% One particular line that shows how it has grown over years:\\
+
+% \\
+% Images.jl quite literally has a ton of functions since it exports almost all functions in JuliaImages all at once.
+
+% According to the project plan, It al implement 12 - 14 demos(depends on if we wish to combine multiple operations in a single demo, and how compact we want the demos and functions in them to be). I'll go into detail about which part deserves space on the demos section of JuliaImages with help of DemoCards.jl.I will go into the discussion for each package provided and where it fits in demos.
+% \subsection{Review with analysis for demos}
+% \newpage
+
+\vspace{0.5cm}
+\Large
+\textbf{\textsc{1.1 Section 1: Demonstrations on Image Binarization and Morphology}}
+
+
+\vspace{0.5cm}
+\Large
+\textsf{ImageBinarization.jl + HistogramThresholding.jl}\\
+
+\vspace{0.5cm}
+\large
+These packages mainly provide algorithms to convert grayscale images into black\\ or white(binary image). Image binarization is one of the most important steps in \\pre-processing of images to save all or maximum sub-components such as objects, text, background, and image.\\
+Histogram Thresholding also provides similar functionalities and a little more in terms of abilities to get more than black or white. Long demonstration will come from this section.
+\\
+There are currently 12 algorithms available to perform image binarization/thresholding:
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item Some Algorithms perform better for text data i.e. Niblack and Sauvola
+    \item Some Algorithms perform better for distinct contrast between foreground and background i.e. Adaptive Threshold
+\end{itemize}
+
+Points to be covered:
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item  What if I don't know which one is best algorithm for my specific use case?How to check that fast?
+    \begin{displayquote}
+    \begin{minted}{julia}
+    function binarize_methods()
+    . 
+    .
+    end
+    \end{minted}
+    By using this function, which applies all the methods to test image and shows all of them in one place with MosaicViews.jl
+    \end{displayquote}
+    \item Cases for 2-D and 3-D images
+    \begin{displayquote}
+    For the 3-D case, we can use ImageView.jl to show the effect in the 3-D image to the viewer.
+    \end{displayquote}
+    \item Cases for textual and high contrast images need to be taken,\\to show Niblack and Sauvola use cases.
+    \item For simpler methods, we can use simple linear gradients to effectively show what those methods do \\
+     \includegraphics[]{assets/1.png}
+    \begin{displayquote}
+   
+    \end{displayquote}
+\end{itemize}
+
+
+\vspace{0.5cm}
+\Large
+\textsf{ImageMorphology.jl}
+
+\vspace{0.5cm}
+\large
+ImageMorphology.jl exports JuliaImages's collection of non-linear operations related to the shape or morphology of features in an image.
+
+\begin{enumerate}
+  \item  Basic methods : Erosion, Dilation, Closing, Tophat, Bothat, Morphological Gradient, Morphological Laplace 
+  \item  Other methods : convexhull, imfill(for small holes filling), clearborder(to clear image's border), thinning algorithm.
+\end{enumerate}
+ 2 Long demonstrations: One of basic methods, and other to show usage of convex hull, image hole fill, clear border, thinning.
+ \begin{enumerate}
+     \item Long Example : Implementation of the basic algorithms and then comparing the results with the other results and discussion on how the threshold of Gray affect the performance.
+     \begin{minted}{julia}
+     img_erosion = erode(Gray.(img) .< 0.7)
+     \end{minted}
+     \begin{displayquote}
+        \includegraphics[width=10cm,scale=0.5]{assets/morphology.png}
+     \end{displayquote}
+     \item Long Example with usage of convexhull, image fill, thinning, clear border and usage of polygon filling algorithm after convex hull points extraction
+     \begin{displayquote}
+        Input image would be the image of a coin with unclear border, noisy with Noise.jl
+     \end{displayquote}
+    \item Emphasis on input methods and conversion, since some of the above methods only take boolean images.
+    \item Emphasis on creation of boolean image from RGB and GRAY image using thresholding and visualizing them properly afterward
+ \end{enumerate}
+
+To effectively show the capabilities of the Image Binarization and Morphology with Democards for 3d Image, Democards.jl should be able to effectively show 3d image which is not the case yet. So in the community period,this problem also needs to be resolved.
+
+\vspace{0.5cm}
+\Large
+\textbf{\textsc{1.2 Section 2: Demonstrations on Image Features}}
+
+\vspace{0.5cm}
+\Large
+\textsf{ImageFeatures.jl}
+
+\vspace{0.5cm}
+\large
+This package is used to identify and characterize key points in images.\\
+The collection of key points can be matched between two images as shown in the tutorials.\\
+
+There are 7 tutorials currently available in ImageFeatures.jl that need to be transferred to the demonstrations section and they need some bug fixing. GLCM and Local Binary Pattern tutorials need to be reworked/created. 
+
+\vspace{0.5cm}
+Points to be covered :
+\begin{enumerate}
+    \item  BRIEF, ORB, FRISK, Object detection using HOG, FREAK, Local Occurrence Matrix, Local Binary Patterns need to be transferred to Demonstrations section and reworking them to be more concise.
+    \item BRIEF examples need to be updated with test images other than Lena. ORB, FRISK, BRISK has issues with output calculation due to RotMatrix since Rotations.jl isn't imported.
+    \item Show the differences in performances of these algorithms for a image and compare results.
+    \item Show how these algorithms approach a problem like FREAK,BRISK has defined sampling pattern.In BRISK,pixels are sampled over concentric rings and FREAK approaches it differently.
+    \begin{displayquote}
+        \includegraphics[width=10cm,scale=0.5]{assets/image (1).png}
+     \end{displayquote}
+    \item Demonstration on GLCM Texture Analysis :
+    \begin{itemize}
+        \item How to create a GLCM matrix and how matrix is related to image
+        \item Using distance, angles for directional analysis in GLCM
+        \item Deriving properties like correlation, variance, mean etc
+        \item Use of symmetric version of GLCM
+    \end{itemize}
+    
+    \item Long Demonstration on usage of local binary patterns 
+    \begin{displayquote}
+    \includegraphics[width=10cm,scale=0.5]{assets/Untitled drawing (1).png}
+    
+       Use rotated images of faces, other objects at different orientations and then compare them and check if they are similar with Image differences methods
+    \end{displayquote}
+    \begin{itemize}
+        \item Show how the LBP are calculated, computation of histogram from frequency of cells
+        \item Show how LBP can be used in texture and pattern recognition
+    \end{itemize}
+\end{enumerate}
+
+% \newpage
+\vspace{0.5cm}
+\Large
+\textbf{\textsc{1.3 Section 3: Demonstrations on Image Segmentation}}
+
+\vspace{0.5cm}
+\Large
+\textsf{ImageSegmentation.jl}
+
+% https://scikit-image.org/docs/dev/user_guide/tutorial_segmentation.html
+% https://juliaimages.org/stable/pkgs/segmentation/
+\vspace{0.5cm}
+\large
+This package provides the algorithms related to segmentation of images. Although documented quite extensively in the documentation, it needs to be broken into short demo pieces that are quick,concise to use for a new user.\\
+Most of the demos can be considered under the reworking section since they are pretty well documented but needs to be broken down into pieces.\\
+Since this part needs a lot of repetitive work, there is need to discuss on where the emphasis should on certain part of the algorithms.\\ 
+For example : In watershed segmentation, the distance to the background is calculated which should be emphasised on.\\
+
+Points to be covered :
+\begin{itemize}[no 5titemsep,topsep=0]
+    \item Watershed Segmentation Algorithm
+    \begin{itemize}
+        \item Focus on showing distance transform,labelcomponents,labelsmap and showing segmentation accuracy with various degree grayscale images
+    \end{itemize}
+    \item Seeded + Unseeded Region Growing Algorithm
+    \begin{itemize}
+        \item Emphasis on suitable selection of seed points, minimum area threshold, similarity threshold value is important
+    \end{itemize}
+    \item Felzenswalb's Region Merging Algorithm
+        
+    \item Mean Shift Segmentation Algorithm
+    \begin{itemize}
+        \item Emphasis on how meanshift doesn't scale well with size of image and why we use iters,eps keywords,how kernel size i.e. spatial radius,range radius affects resolution of mode detection
+    \end{itemize}
+    \item Fast Scanning Segmentation Algorithm
+    \begin{itemize}
+        \item Emphasis on how fast it can be and how choice of threshold affects results
+    \end{itemize}
+    \item Fuzzy C-means,K-means Algorithm
+    \item Creating Region Adjacency Graphs
+    \item Creation of Region Trees and Region Splitting using RegionTrees
+\end{itemize}
+
+\vspace{0.3cm}
+Also, Comparison demonstration/tutorial of these segmentation and superpixel algorithms would also improve the user's understanding on how and where a particular algorithm would be most efficient.
+
+% \newpage
+\vspace{0.5cm}
+\Large
+\textbf{\textsc{1.4 Section 4: Demonstrations on Quality Indexes and\\ Contrast Adjustment}}
+
+\vspace{0.5cm}
+\Large
+\textsf{ImageContrastAdjustment.jl}
+
+\vspace{0.5cm}
+\large
+This package provides algorithms for contrast adjustments.
+Most of its \\ exported functions use cases are shown in histogram equalization example and \\histogram matching example.\\
+
+A good idea would be to rework both the histogram matching demo and histogram \\equalization demo to more accurately show
+\\
+Points to be covered:
+
+\begin{itemize}
+    \item Use a different test image than moon surface, probably  mountain stream png or lakecolor tiff, as they will be more clearly able to show how gamma correction among others can be used for
+    images clicked in poor lighting conditions.
+    
+    \item Also,it would be a good idea to take a matrix and show the effect of all the algorithms in one place.
+    \begin{displayquote}
+       \includegraphics[scale=0.5]{assets/contrast.png}
+    \end{displayquote}
+    \item Also, examples need to be reworked to show the histogram calculated through buildhistogram functionality
+\end{itemize} 
+
+% \href{http://learningjulia.com/2017/03/09/imfilter-and-arrays.html}{Imfilter Example}\\
+% \href{http://learningjulia.com/2017/02/24/blurring-and-manipulation.html}{Blurring and ImageManipulation}
+
+% Demonstration of filtering kernels needs to be discussed
+% #TODO
+
+
+
+\vspace{0.5cm}
+\Large
+\textsf{ImageQualityIndexes.jl}
+
+\vspace{0.5cm}
+\large
+ImageQualityIndexes provides the basic image quality assessment methods.
+There are currently 3 methods that return ratios:
+\begin{itemize}
+    \item Peak signal-to-noise ratio
+    \item Structural similarity
+    \item Multi-scale SSIM
+    \item Colorfulness
+\end{itemize}
+Even though SSIM has a good demonstration already available on the website, we should make a QualityIndexes Complete example for a movie-like array of Images using ImageView.jl as shown in its documentation for human brain MRI.
+Points to be covered:
+\begin{itemize}
+    \item All 4 Quality Indexes to be calculated for two movies(arrays of images) run side by side like shown below:
+    \begin{displayquote}
+       \includegraphics[scale=0.8]{assets/coupled.jpg}
+    \end{displayquote}
+\end{itemize}
+
+\vspace{0.5cm}
+\Large
+\underline{ImageFiltering.jl}
+
+\vspace{0.5cm}
+\large
+ImageFiltering.jl implements blurring, sharpening, gradient computation, and other linear filtering operations, as well as nonlinear filters like min/max.
+ImageFiltering.jl provides 2 demos:
+\begin{enumerate}
+    \item Custom median filters (shows use of median filter with mapwindow)
+    \item Max min filters(show use of min,max filter)
+\end{enumerate}
+
+These tutorials need to be moved to demonstrations section.
+% \vspace{0.5cm}
+% \Large
+% \underline{ImageDistances.jl}
+
+% % https://scikit-image.org/docs/dev/auto_examples/segmentation/plot_metrics.html#sphx-glr-auto-examples-segmentation-plot-metrics-py
+% \vspace{0.5cm}
+% \large
+% Well I don't know it's use so it's quite a big fuckup here
+% This 
+% - https://scikit-image.org/docs/dev/auto_examples/segmentation/plot_metrics.html#sphx-glr-auto-examples-segmentation-plot-metrics-py
+% -https://scikit-image.org/docs/dev/auto_examples/segmentation/plot_hausdorff_distance.html#sphx-glr-auto-examples-segmentation-plot-hausdorff-distance-py
+% - https://scikit-image.org/docs/dev/auto_examples/transform/plot_ssim.html#sphx-glr-auto-examples-transform-plot-ssim-py
+% -https://scikit-image.org/docs/dev/auto_examples/filters/plot_j_invariant_tutorial.html#sphx-glr-auto-examples-filters-plot-j-invariant-tutorial-py
+% https://scikit-image.org/docs/dev/auto_examples/filters/plot_cycle_spinning.html#sphx-glr-auto-examples-filters-plot-cycle-spinning-py
+% https://scikit-image.org/docs/dev/auto_examples/filters/plot_nonlocal_means.html#sphx-glr-auto-examples-filters-plot-nonlocal-means-py
+% https://scikit-image.org/docs/dev/auto_examples/filters/plot_denoise_wavelet.html#sphx-glr-auto-examples-filters-plot-denoise-wavelet-py
+
+% Euclidean,Sqlidean,CityBlock,TotalVariation,Minkowski,Hamming,SumAbsoluteDifference,SumSquaredDifference,MeanAbsoluteError,MeanSquaredError,RootMeanSquaredError,NCC,Hausdorff and Modified Hausdorff julia
+
+
+% \vspace{0.5cm}
+% \Large
+% \underline{ImageTransformations.jl}
+
+% \vspace{0.5cm}
+% \large
+% Exports     restrict,
+%     imresize,
+%     center,
+%     warp,
+%     WarpedView,
+%     warpedview,
+%     InvWarpedView,
+%     invwarpedview,
+%     imrotate
+
+% - Translation  
+% - Rotation
+% - Affine Transformation
+% - Perspective Transformation
+
+% One example from this section https://scikit-image.org/docs/dev/user_guide/geometrical_transform.html
+% https://scikit-image.org/docs/stable/auto_examples/transform/plot_geometric.html
+% -can be used with imagefeatures.jl
+% https://juliaimages.org/stable/pkgs/segmentation/
+% https://juliaimages.org/v0.20/imagesegmentation/
+% \href{https://juliaimages.org/stable/pkgs/segmentation/}{Link}. 
+% \vspace{0.5cm}
+% \Large
+% \underline{ImageInpainting.jl}
+
+% \vspace{0.5cm}
+% \large
+% This project is still under WIP, but it has Criminisi which is interesting, might be a good to increase its visibility
+% Inpainting is a conservation process where damaged, deteriorating, or missing parts of an artwork are filled in to present a complete image.
+% Currently, this package only provides Criminisi Examplar-based Algorithm.
+
+% Since, Image InPainting and Image Restoration are similar fields with interests in restoring damaged/incomplete images for which JuliaImages doesn't have much functionality yet.
+
+% Small Demo: It would be a good idea to make a small demo on this topic of course after combining it with other algorithms, we can use noisy images with small and major holes and distortions. This will help in further work in Image restoration algorithms.
+
+
+
+
+% \vspace{0.5cm}
+% \Large
+% \underline{ImageTracking.jl}
+
+% \vspace{0.5cm}
+% \large
+% ImageTracking.jl provides algorithms for object tracking,currently provided optical flow estimation with following algorithm: 
+% \begin{enumerate}
+%     \item Lucas-Kanade Algorithm(for sparse optical flow)
+%     \item Farneback Algorithm(for dense optical flow)
+% \end{enumerate}
+
+% This project adds novel functionality but isn't mentioned in Julia images website and it has  
+% Long demonstration can come from here:
+
+% \begin{enumerate}
+%     \item Demonstration of image registration using optical flow which shows how
+% image registration uses optical flow and how image tracking in multiple happens?
+% \end{enumerate}
+
+% 	# main functions
+%     optical_flow,
+%     optical_flow!,
+
+% 	# other functions
+% 	haar_coordinates,
+% 	haar_features,
+
+% 	# other functions
+% 	ColorBased,
+% 	EndpointError,
+% 	AngularError,
+% 	polynomial_expansion,
+% 	RasterConvention,
+% 	CartesianConvention,
+% 	visualize_flow,
+% 	read_flow_file,
+% 	evaluate_flow_error,
+% 	calculate_statistics,
+
+% 	# optical flow algorithms
+% 	LucasKanade,
+% 	Farneback,
+
+%     # types that select implementation
+%     ConvolutionImplementation,
+%     MatrixImplementation
+    
+    % tracks and deserves a demo
+% \vspace{0.5cm}
+% \Large
+% \underline{ImageEdgeDetection.jl}
+
+% \vspace{0.5cm}
+% \large
+% This new package need to presented with demos in the main demo
+% - Progress has already been made with Canny Edge Filter Demo written by me and reworked by Johnny Chen to fit specific needs
+% - Although Now I feel that the usage of imgradients() and thinning algorithms can be shown in more details so, yeah I believe that the current demo can be improved to fit the needs for other as canny had different requirement than this
+
+% -deprecating old canny
+% -issues with hough transform
+% - NEEDS REWORK WITH discussion of imgradients and thinning algorithms
+% \section{Next Section}
+% \subsection{ImageDraw.jl}
+
+% ImageDraw supports basic drawing on Images. You can draw points, lines, circles, ellipse, and paths.
+% - Implementation of Bezier_Curves(Quadratic and Cubic only) and Polyline(pass vector of verts in order), if time allowed random shape would be a good addition
+% - Polygon Filling Algorithms - already worked out in issue(3 algorithms) 
+%   - Boundary Fill Algorithm
+%   - Flood Fill Algorithm
+%   - Scan-Line Algorithm
+% - Keyword Addition to Line, Polyline with Arrow like pointer in front or back
+
+% \subsection{ImageView.jl}
+
+% This package is quite well developed and has various interesting and important functionalities though
+% - It doesn't have docs Nora  demo, readme is well-written ut it can be utilized for making a brand new demo.
+
+% Annotations and view GIF and another widget could be interesting for long demonstration by making a single long demonstration of building example
+% lIKE DONE HERE:
+% https://juliagizmos.github.io/GtkReactive.jl/stable/controls.html
+% https://juliagraphics.github.io/Gtk.jl/latest/manual/gettingStarted/
+% \subsection{Notices:}
+% - This is like most unuseful tuff but relevant
+% % Example for prcoessing 3d images    
+% % \subsection{ImageMetadata.jl}
+% % https://juliaimages.org/latest/pkgs/metadata/ well documented
+
+% % \subsection{ImageReconstruction.jl}
+% % Why isn't it working?
+
+% % \subsubsection{ImageInTerminal.jl}
+% % Used to show single Colorant and whole Colorant arrays (i.e. Images) in the interactive REPL. Images are downscaled to fit into the size of the terminal session.
+
+% % We can show the capabilities of ImageInTerminal.jl of how arrays, mosaic views, gif can be shown, but it's not an impressive enough trick until the image quality issue is not resolved.\href{https://github.com/JuliaImages/ImageInTerminal.jl/issues/35}{35-Image Dithering}
+
+% % \subsubsection{ImageCore.jl}
+
+% % Basics for this topic are very well documented in the documentation, though it doesn't have much visibility in the documentation, it takes some effort to find it.Views/Copy, Channelview and raw view are important topics and can be combined in one demo 
+% % - issue with juliaimages.org
+
+% % \subsubsection{TestImages.jl and JuliaIO}
+
+% % Basics for this topic are very well documented in the Getting started section, though the addition of details on how to make GIFs to present algorithmic processes by concatenating images is needed in my opinion
+
+
+% \subsubsection{ImageNoise.jl}
+% I don't know wtf is this
+% \subsection{ImageShow.jl}
+% Small packages but required to work with notebook environment
+% - can be show in documentation with downsize_for thumbnail and _RESTRICT1
+
